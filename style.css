@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Press Start 2P', cursive;
+    color: #B9B9B9;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.story {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.stage {
+    height: 100vh;
+    width: 80vw;
+}
+
+.scene {
+    height: 60%;
+    width: 100%;
+}
+
+.scene_img {
+    background-image: url("img/first-scene.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.story {
+    height: 40%;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 4rem;
+}
+
+.continue button {
+    position: absolute;
+    color: #B9B9B9;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    background-color: black;
+    border: 0;
+    bottom: 0;
+    margin-bottom: 2rem;
+}
+
+.option-wrapper button {
+    width: 329px;
+    height: 55px;
+    left: calc(50% - 329px/2 - 119px);
+    top: 517px;
+    background: linear-gradient(180deg, #898989 -17.61%, rgba(31, 18, 40, 0) 189.73%);
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+    color: #B9B9B9;
+
+}
+
+.option-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.continue-question {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 24px;
+  }
