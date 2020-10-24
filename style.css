@@ -102,13 +102,8 @@ body {
 
 .tv-frame {
     background: url(img/awesome-tv.png)  no-repeat scroll 0 0 transparent;
-    border-radius: 4px 4px 4px 4px;
-    box-shadow: 0 0 5px #000000, 0 0 6px #000000;
     height: 100%;
-    left: 0;
-    pointer-events: none;
     position: absolute;
-    top: -5px;
     width: 100%;
     z-index: 99999;
 }
