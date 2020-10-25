@@ -4,7 +4,7 @@ let story = [
         end: false,
         background: "/img/first-scene.png",
         storyText: [
-            `Once upon a time, there was a little darling damsel, whom everybody loved that looked upon her, but her old granny loved her best of all. Once she made her a hood of red samite, and since she would wear nothing else on her head, people gave her the name of "Red Hood."`, `Once her mother said to Red Hood, "Go; here is a slice of cake and a bottle of wine; carry them to old Granny. She is ill and weak, and they will refresh her. Walk prettily and don't go out of the road, otherwise you will fall and break the bottle, and then poor granny will have nothing."`, `But granny lived out in a forest, half an hour's walk from the village. When Red Hood went into the forest, she met a wolf. But she did not know what a wicked beast he was, and was not afraid of him.`, `"God help you, Red Hood!" said he.`,
+            `Once upon a time, there was a little darling damsel, whom everybody loved that looked upon her, but her old granny loved her best of all. Once she made her a hood of red samite, and since she would wear nothing else on her head, people gave her the name of "Red Hood."`, `"God help you, Red Hood!" said he.`,
         ],
         choice: "What does Red Hood do?",
         optionA: {
@@ -61,58 +61,49 @@ let story = [
     // },
 ]
 
-// let getForkId = story.find(story => story.id === 1);
-// let logForkId = getForkId.optionB.forkId;
-
-// let getNewStory = story.find(story => story.id === logForkId);
-
-// console.log(getNewStory.choice);
-
-
-
 // WRITE THE STORY TO THE HTML
 const storylineContainer = document.querySelector(".storyline");
 const storyforkContainer = document.querySelector(".storyfork");
 
 function writeStory() {
-    let i = 0;
-
+    let i = 0;
     const paragraph = storylineContainer.querySelector(".paragraph");
+    const choice = storyforkContainer.querySelector(".choice");
+    const optionA = document.getElementById("optionA");
+    const optionB = document.getElementById("optionB");
 
     // Grab the correct ID from the Object
     let currentStory= story.find(story => story.id === 1);
     let currentStoryText = currentStory.storyText;
+    //let currentStoryEnd = currentStory.end;
 
-    console.log(currentStoryText[0]);
-    console.log(currentStoryText);
-    console.log(currentStoryText.length);
 
-        if (i === 0) {
-            paragraph.textContent = currentStoryText[i];
-            window.addEventListener('keydown', e => {
-                if (e.code === 'Space') {
-                    console.log('Space pressed');
-                    i++
-                    console.log(i);
-                }
-            })
-        } 
+    // Push the first portion of the story
+    if (i === 0) {
+        paragraph.textContent = currentStoryText[i];
+    }
 
-    // Loop through the story array and print each portion on demand
-    // while (i < currentStoryText.length) {
-    //     if (i === 0) {
-    //         paragraph.textContent = currentStoryText[i];
-    //         window.addEventListener('keydown', e => {
-    //             if (e.code === 'Space') {
-    //                 console.log('Space pressed');
-    //                 i++
-    //                 console.log(i);
-    //             }
-    //         })
-    //     } 
-    // }
+    // Push new portion when Space is pressed
+    window.addEventListener('keydown', e  => {
+        if (e.code === 'Space') {
+            i++;
 
-    // When the story is done either show story fork choices or switch to THE END screen
+            if (i < currentStoryText.length) {
+                paragraph.textContent = currentStoryText[i];
+            } else if (currentStory.end) {
+                // If the story is an ending, switch to the THE END screen
+                console.log('Switch to end screen');
+            } else {
+                // If the story continue, show storyfork choices
+                storylineContainer.classList.toggle('hidden');
+                storyforkContainer.classList.toggle('hidden');
+
+                choice.textContent = currentStory.choice;
+                optionA.textContent = currentStory.optionA.text;
+                optionB.textContent = currentStory.optionB.text;
+            }
+        }
+    });
 }
 
 writeStory();

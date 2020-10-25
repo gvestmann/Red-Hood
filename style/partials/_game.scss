@@ -45,6 +45,10 @@
                 cursor: pointer;
             }
 
+            &.hidden {
+                display: none;
+            }
+
         }
         .storyfork {
             width: 100%;
@@ -78,6 +82,10 @@
                     margin: 0 10px;
                     cursor: pointer;
                 }
+            }
+
+            &.hidden {
+                display: none;
             }
         }
     }
