@@ -46,77 +46,77 @@ let story = [
     },
 ]
 
-// WRITE THE STORY TO THE HTML
-const storylineContainer = document.querySelector(".storyline");
-const storyforkContainer = document.querySelector(".storyfork");
-const storyBackground = document.getElementById("storyBG");
+// WRITE STORY TO THE HTML
 
-function writeStory(storyId) {
-    let i = 0;
-    const paragraph = storylineContainer.querySelector(".paragraph");
-    const choice = storyforkContainer.querySelector(".choice");
-    const optionA = document.getElementById("optionA");
-    const optionB = document.getElementById("optionB");
+const storylineContainer = document.querySelector('.storyline');
+const storyforkContainer = document.querySelector('.storyfork');
+const storybackgroundContainer = document.querySelector('.game__img');
 
-    // Grab the correct ID from the Object
-    let currentStory= story.find(story => story.id === storyId);
-    let currentStoryText = currentStory.storyText;
-    //let currentStoryEnd = currentStory.end;
+function writeStory(storyID) {
+    // Storyline containers
+    const paragraph = storylineContainer.querySelector('.paragraph');
+    const storyImageBG = storybackgroundContainer.querySelector('#storyBG');
+    
+    // Storyfork containers
+    const choice = storyforkContainer.querySelector('.choice');
+    const optionA = document.getElementById('optionA');
+    const optionB = document.getElementById('optionB');
 
-    console.log(currentStory.storyText);
-    console.log(currentStory.storyText.length);
+    let storyPortion = story.find(story => story.id === storyID);
+    let storyPortionText = storyPortion.storyText;
 
-    // Push the first portion of the story
-    if (i === 0) {
-        paragraph.textContent = currentStoryText[i];
-        storyBackground.src = currentStory.background;
+    console.log(storyPortionText);
+
+    function initializePortion() {
+        let i = 0;
+
+        // Initialize story (push the first segment plus images)
+        if (i === 0) {
+        storyImageBG.src = storyPortion.background;
+        paragraph.textContent = storyPortionText[i];
+        };
+
+        // Space bar to continue if there is more left of story section
+        window.addEventListener('keydown', e => {
+            if (e.code === 'Space' && i < storyPortionText.length-1) {
+                i++;
+                paragraph.textContent = storyPortionText[i];
+            } else if (e.code === 'Space' && i === storyPortionText.length-1){
+                console.log('Does this work?')
+                endPortion();
+            }
+        });
     }
 
-    // Push new portion when Space is pressed
-    window.addEventListener('keydown', e  => {
-        if (e.code === 'Space') {
-            i++;
+    function endPortion() {
+        if (storyPortion.end) {
+            console.log('Switch to end screen');
+        } else {
+            storylineContainer.classList.toggle('hidden');
+            storyforkContainer.classList.toggle('hidden');
 
-            if (i < currentStoryText.length) {
-                paragraph.textContent = currentStoryText[i];
-            } else if (currentStory.end) {
-                // If the story is an ending, switch to the THE END screen
-                console.log('Switch to end screen');
-            } else {
-                // If the story continue, show storyfork choices
-                storylineContainer.classList.toggle('hidden');
-                storyforkContainer.classList.toggle('hidden');
+            choice.textContent = storyPortion.choice;
+            optionA.textContent = storyPortion.optionA.text;
+            optionB.textContent = storyPortion.optionB.text;
 
-                choice.textContent = currentStory.choice;
-                optionA.textContent = currentStory.optionA.text;
-                optionB.textContent = currentStory.optionB.text;
+            window.addEventListener('keydown', e => {
+                if (e.code === 'ArrowLeft') {
+                    // storylineContainer.classList.toggle('hidden');
+                    // storyforkContainer.classList.toggle('hidden');
 
-                window.addEventListener('keydown', e => {
-                    console.log(e.code);
-                    if (e.code === 'ArrowLeft') {
-                        // If left trigger option A
-                        storylineContainer.classList.toggle('hidden');
-                        storyforkContainer.classList.toggle('hidden');
-                        
-                        i = 0;
-                        writeStory(currentStory.optionA.forkId);
-                    } else if (e.code === 'ArrowRight') {
-                        // If right trigger option B
-                        storylineContainer.classList.toggle('hidden');
-                        storyforkContainer.classList.toggle('hidden');
-                        
-                        i = 0;
-                        writeStory(currentStory.optionB.forkId);
-                    }
-                });
-            };
-        };
-    });
-} 
+                    return storyPortion.optionA.forkId;
+                } else if (e.code === 'ArrowRight') {
+                    return storyPortion.optionB.forkId;
+                }
+            });
+        }
+    }
+
+    initializePortion();
+
+}
 
 writeStory(1);
-
-
 
 
 
