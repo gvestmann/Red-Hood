@@ -1,0 +1,10 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    color: #B9B9B9;
+    background-color: #222;
+    height: 100vh;
+}
+.scene__img {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
