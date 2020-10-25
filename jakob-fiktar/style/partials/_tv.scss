@@ -1,0 +1,47 @@
+@use 'variables' as var;
+@use 'animation';
+
+.tv {
+    @extend %screen-size;
+    background-color: var.$black;
+
+    @extend %flex-center;
+
+    &__box {
+        @extend %screen-size;
+        //background-color: purple;
+
+        position: absolute;
+        @extend %flex-center;
+        z-index: 100;
+        
+        img {
+            //opacity: 0.5;
+            max-width: 100%;
+            transform: scale(1.93) translate(2.5%, 2.5%);
+        }
+    }
+
+    &__screen {
+        @extend %flex-center;
+        background-color: var.$dark;
+        color: var.$text;
+
+        &--start, &--game, &--end {
+            display: none;
+    
+            &.active {
+                display: block;
+                animation: fade-in 1000ms ease-in 100ms forwards;
+            }
+        }
+
+        &:after {
+            content: '';
+            background-image: url(/img/noise.png);
+            @extend %screen-size;
+            opacity: 0.1;
+            position: fixed;
+        }
+    }
+}

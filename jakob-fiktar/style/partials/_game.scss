@@ -1,0 +1,39 @@
+@use 'variables' as var;
+
+.game {
+    @extend %screen-size;
+    @extend %flex-center;
+    flex-direction: column;
+
+    &__img {
+        height: 50%;
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__text {
+        height: 50%;
+        width: 100%;
+
+        padding: 20px 40px 40px;
+        box-shadow: 0 0 5px 5px var.$dark;
+        overflow: hidden;
+        
+        display: flex;
+        flex-wrap: wrap;
+
+        .paragraph {
+            width: 100%;
+        }
+
+        .continue {
+            width: 100%;
+            text-align: end;
+            align-self: flex-end;
+        }
+    }
+}

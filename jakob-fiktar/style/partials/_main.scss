@@ -1,0 +1,27 @@
+@use 'variables' as var;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(/img/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    font-family: var.$main-font;
+    font-size: var.$text-size;
+    line-height: var.$text-leading;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}

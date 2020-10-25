@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
+.game, .tv, .tv__box, .tv__screen:after {
+  height: 52vh;
+  width: 65vh;
+}
+
+.game, .tv, .tv__box, .tv__screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(/img/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Syne Mono", monospace;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.tv {
+  background-color: #030303;
+}
+.tv__box {
+  position: absolute;
+  z-index: 100;
+}
+.tv__box img {
+  max-width: 100%;
+  transform: scale(1.93) translate(2.5%, 2.5%);
+}
+.tv__screen {
+  background-color: #222;
+  color: #b9b9b9;
+}
+.tv__screen--start, .tv__screen--game, .tv__screen--end {
+  display: none;
+}
+.tv__screen--start.active, .tv__screen--game.active, .tv__screen--end.active {
+  display: block;
+  animation: fade-in 1000ms ease-in 100ms forwards;
+}
+.tv__screen:after {
+  content: "";
+  background-image: url(/img/noise.png);
+  opacity: 0.1;
+  position: fixed;
+}
+
+.game {
+  flex-direction: column;
+}
+.game__img {
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
+}
+.game__img img {
+  max-width: 100%;
+}
+.game__text {
+  height: 50%;
+  width: 100%;
+  padding: 20px 40px 40px;
+  box-shadow: 0 0 5px 5px #222;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+.game__text .paragraph {
+  width: 100%;
+}
+.game__text .continue {
+  width: 100%;
+  text-align: end;
+  align-self: flex-end;
+}
+
+/*# sourceMappingURL=style.css.map */

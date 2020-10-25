@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+// FONT
+
+$main-font: 'Syne Mono', monospace;
+$text-size: 18px;
+$text-leading: 24px;
+
+
+// COLORS
+
+$black: #030303;
+$dark: #222;
+$text: #b9b9b9;
+
+// PLACEHOLDERS
+
+%screen-size {
+    height: 52vh;
+    width: 65vh;
+}
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
