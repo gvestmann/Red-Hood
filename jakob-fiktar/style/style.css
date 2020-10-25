@@ -5,7 +5,7 @@
   width: 65vh;
 }
 
-.game, .tv, .tv__box, .tv__screen {
+.game, .game__text .storyline, .game__text .storyfork, .game__text .storyfork .options, .tv, .tv__box, .tv__screen {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,6 +70,7 @@ body {
   background-image: url(/img/noise.png);
   opacity: 0.1;
   position: fixed;
+  z-index: 0;
 }
 
 .game {
@@ -92,13 +93,44 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-.game__text .paragraph {
+.game__text .storyline {
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+}
+.game__text .storyline .paragraph {
   width: 100%;
 }
-.game__text .continue {
+.game__text .storyline .continue {
   width: 100%;
   text-align: end;
   align-self: flex-end;
+  cursor: pointer;
+}
+.game__text .storyfork {
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+}
+.game__text .storyfork .choice {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+.game__text .storyfork .options {
+  width: 100%;
+  height: 50%;
+  align-self: flex-end;
+  z-index: 300;
+}
+.game__text .storyfork .options__button {
+  padding: 10px 15px 10px 15px;
+  background: linear-gradient(180deg, #898989 -17.61%, rgba(31, 18, 40, 0) 189.73%);
+  font-family: inherit;
+  font-size: 20px;
+  color: #B9B9B9;
+  margin: 0 10px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

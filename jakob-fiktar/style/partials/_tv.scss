@@ -42,6 +42,8 @@
             @extend %screen-size;
             opacity: 0.1;
             position: fixed;
+
+            z-index: 0;
         }
     }
 }
