@@ -24,6 +24,7 @@ body {
     z-index: -1;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .scene_img {
@@ -123,3 +124,5 @@ body {
 		opacity: 1;
 	}
 }
+
+2932
