@@ -216,4 +216,116 @@ let story = [
             text: 'Go hunting', forkId: 12212,
         },
     },
+    {
+        id: 1222,
+        end: false,
+        background: "/img/scene1222.jpg",
+        actorA: "/img/red-hood.gif",
+        actorB: "/img/wolf-in-bed.gif",
+        storyText: [`On the bed lay some motherfucker dressed in Granny’s clothes. The creature was hideous with long, hairy ears, eyes like frisbees and a mouth big enough to camp in.`, `Red Hood raised her gun: “If you fucking move a muscle, I’ll execute the motherfucking ya’ self”.`, `The Wolf, scared shitless, raised his hands and lay as still as in a grave.`, `“What did you do with Granny, ya’ fuckwit?”`, `“I ate her, I ate, I’m sorry. Don’t shoot me,” the poor sucker replied.`,
+        ],
+        choice: "What does Red Hood do?",
+        optionA: {
+            text: 'Put a cap in his ass', forkId: 12221,
+        },
+        optionB: {
+            text: 'Let that shitheel go', forkId: 12222,
+        },
+    },
+    {
+        id: 12211,
+        end: true,
+        background: "/img/scene12211.jpg",
+        actorA: "/img/the-huntsman.gif",
+        actorB: "/img/wolf-in-bed.gif",
+        storyText: [`He went into the room, and looked into the bed; there lay the Wolf. "Have I found you now, old rascal?" said he. `, `He was just going to take aim with his gun, when he bethought himself, "Perhaps the Wolf has only swallowed Granny, and she may yet be released."`, `Therefore he did not shoot, but took a knife and began to cut open the sleeping Wolf's maw. When he had made several cuts, out skipped Red Hood, and cried, "Oh, how frightened I have been; it was so dark in the wolf's maw!"`, `Afterwards out came old Granny, still alive, but scarcely able to breathe. But Red Hood made haste and fetched large stones, with which they filled the Wolf's maw, and when he woke he wanted to jump up and run away, but the stones were so heavy that he fell on the ground and beat himself to death.`, `Now, they were all three merry. The Huntsman took off the Wolf's skin; Granny ate the cake and drank the wine which little Red Hood had brought, and became strong and well again; and little Red Hood thought to herself, "As long as I live, I won't go out of the road into the forest, when mother has forbidden me."`,
+        ],
+        choice: "",
+        optionA: {
+            text: '', forkId: 0,
+        },
+        optionB: {
+            text: '', forkId: 0,
+        },
+    },
+    {
+        id: 12212,
+        end: false,
+        background: "/img/scene12211.jpg",
+        actorA: "/img/the-huntsman.gif",
+        actorB: "/img/lederhosen-friends.gif",
+        storyText: [`The Huntsman roamed the forest for a few hours and had a very successful day of hunting. He shot a bear and moose, 2 deers, 2 pheasants, 3 squirrels, 2 wolves (or 1 wolf and 1 dog), 5-8 ducks, a snake, some crows, perhaps a fox (or something very similar), a big, wild boar, 2 elks, a snake, and a wood-pecker. `, `Now, it was time to gome home. On his way he passed Granny’s house, and he could still hear that poor pold woman snore. “She must have terrible sleep apnea,” he thought to himself.`, `He had just gotten home when there was a mysterious knock on the door. Reluctantly he open. Outside stood a couple of his lederhosen friends. They were going to a disco in Berlin, and asked if he would like to join them.`,
+        ],
+        choice: "What does the Huntsman do",
+        optionA: {
+            text: 'Go to the disco', forkId: 122121,
+        },
+        optionB: {
+            text: 'Stay home and knit', forkId: 122122,
+        },
+    },
+    {
+        id: 12221,
+        end: true,
+        background: "/img/scene12221.jpg",
+        actorA: "/img/red-hood.gif",
+        actorB: "/img/granny.gif",
+        storyText: [`Red Hood pulled the trigger and put a hole in the motherfucker’s head. Next she slashed his belly open, and in there she found Granny, miraculously still alive.`, `Red Hood and Granny cleaned up the mess and threw the Wolf into the river. And then, they celebrated life itself, with all it’s ups and downs while getting fucked up on mother’s wine.`,
+        ],
+        choice: "",
+        optionA: {
+            text: '', forkId: 0,
+        },
+        optionB: {
+            text: '', forkId: 0,
+        },
+    },
+    {
+        id: 12222,
+        end: true,
+        background: "/img/scene12222.jpg",
+        actorA: "/img/red-hood.gif",
+        actorB: "/img/the-wolf.gif",
+        storyText: [`Luckily for the Wolf, Red Hood was in a generous mood that day and decided to let him go. “Get your stinking ass out of here!” she told him as she pointed towards the door.`, `“Thank you, Red Hood, thank you. Thank you, thank you. I will repay you my life thousand-fold,” the wolf whined and ran out of the house with his tail between his legs and Granny’s body weighing heavy in his belly.`, `Red Hood was striken with grief for a long time, but eventually she had to put the horrors aside. She moved into Granny’s house (it’s prime real estate after all) and renovated it. She lived a long and happy life with the wolf as her bitch.`,
+        ],
+        choice: "",
+        optionA: {
+            text: '', forkId: 0,
+        },
+        optionB: {
+            text: '', forkId: 0,
+        },
+    },
+    {
+        id: 122121,
+        end: true,
+        background: "/img/scene122121.jpg",
+        actorA: "/img/the-huntsman.gif",
+        actorB: "/img/lederhosen-friends.gif",
+        storyText: [`The Huntsman gave in to his friends’ insistent pleads, changed into his lederhosen and headed to the disco in Berlin.`, `The three friends had a fun time at the disco and the Huntsman even danced to I Will Survive. Some say he sang along at the top of his lungs, “You think I'd crumble? You think I'd lay down and die? OH NO NOT I!!!”`, `Hours passed, disco songs were played and the Huntsman had one drink after another. He boasted about his impressive day of hunting and either spilled his beer on his lederhosen or had an accident at the urinal. It’s a very blurry night.`, `Then, in the wee hours of the morning, the Huntsman, shitfaced, headed back home through the woods. But who would he meet other than the Wolf who had awaken from his post-feeding slumber.`, `On account of how many tequila shots he had done at the disco, the Huntsman was in no state to fight or run away from the Wolf, who gobbled him up in one bite and the Huntsman lived long enough to realize that his final moments would be spent in the company of the half digested corpses of Red Hood and her Granny.`,
+        ],
+        choice: "",
+        optionA: {
+            text: '', forkId: 0,
+        },
+        optionB: {
+            text: '', forkId: 0,
+        },
+    },
+    {
+        id: 122122,
+        end: true,
+        background: "/img/scene122122.jpg",
+        actorA: "/img/the-huntsman.gif",
+        actorB: "",
+        storyText: [`The Huntsman had a lovely, cozy evening knitting himself a new scarf and drinking sleepy-time tea. He fell asleep proud of the day’s work and dreamt sweet dreams late into the next morning.`, `The following day, however, he got some tragic news. Red Hood and her old Granny had vanished into thin ever - and they were never to be seen again. Some of their clothes were however found here and there over the next few weeks, including the shiny, red hood. All covered in feces.`,
+        ],
+        choice: "",
+        optionA: {
+            text: '', forkId: 0,
+        },
+        optionB: {
+            text: '', forkId: 0,
+        },
+    },
 ]
