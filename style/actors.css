@@ -1,0 +1,19 @@
+.game__img--actorA {
+    position: absolute;
+    height: 100px;
+    bottom: 2rem;
+    left: 4rem;
+    z-index: 9999;
+}
+
+.game__img--actorB {
+    position: absolute;
+    height: 100px;
+    bottom: 2rem;
+    right: 4rem;
+    z-index: 9999;
+}
+
+.game__img {
+    position: relative;
+}

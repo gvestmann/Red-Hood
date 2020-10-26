@@ -134,7 +134,7 @@ let story = [
         id: 121,
         end: false,
         background: "/img/scene121.jpg",
-        actorA: "/img/wolf.gif",
+        actorA: "/img/wolf2.gif",
         actorB: "/img/hans-and-greta.gif",
         storyText: [`The Wolf went through the narrow forrest and followed the smell of gingerbread cookies. “This smell is mesmerizing” the Wolf thought to himself.  He continued running, sniffing at the air, until he came to a house made of gingerbread cookies. `, `But, he heard agonizing screams coming from the house. He snuck around and looked in through the window of the house where he saw a girl pushing a witch into an oven. In the corner of the house was a caged boy who was fat and plump.`, `"To hell with Red Hood, this guy is stuffed like a Thanksgiving turkey," thought the wolf, salivating. “And the girl will make a nice dessert” he thought to himself.`,
         ],
