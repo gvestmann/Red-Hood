@@ -2,7 +2,7 @@ let story = [
     {
         id: 1,
         end: false,
-        background: "/img/scene122122.jpg",
+        background: "img/scene122122.jpg",
         storyText: [
             `Once upon a time, there was a little darling damsel, whom everybody loved that looked upon her, but her old granny loved her best of all. Once she made her a hood of red samite, and since she would wear nothing else on her head, people gave her the name of "Red Hood."`, `"God help you, Red Hood!" said he.`,
         ],
@@ -17,7 +17,7 @@ let story = [
     {
         id: 11,
         end: false,
-        background: "/img/scene11.jpg",
+        background: "img/scene11.jpg",
         storyText: [
             `Red Hood ran scared from the wolf and hid behind a rock by the edge of the forest. The wolf wandered around for a long time, but soon vanished inbetween the trees.`, `As Red Hood came out from her hiding place, about to turn back home, three little pigs came walking by.`, `“Why do you hide, wee little human?” they asked.`, `“From the big, bad wolf,” she replied.`, `“Come with us, you’ll be safe,” they said, “we swear by the hairs on our chinny chin chins!”`,
         ],
@@ -32,7 +32,7 @@ let story = [
     {
         id: 12,
         end: false,
-        background: "/img/scene12.jpg",
+        background: "img/scene12.jpg",
         storyText: [
             `"Whither so early, Red Hood?"`, `"To Granny. She must have a good meal for once, and strengthen herself therewith."`, `"Where does your Granny live, Red Hood?"`, `"A good quarter of an hour's walk further in the forest, under yon three large oaks," said Red Hood.`, `The Wolf thought within himself, "This nice young damsel is a rich morsel. She will taste better than the old woman; but you must trick her cleverly, that you may catch both."`, `For a time he went by Red Hood's side. Then said he, "Red Hood! Just look! There are such pretty flowers here! Why don't you look round at them all? If you bring with you a sweet smelling nosegay to granny, it will cheer her.”`, `“It is still so early, even if I go picking flowers, I shall come to her in plenty of time," and therewith she skipped into the forest.`, `The Wolf was pleased that his ploy worked and headed down the path to Granny’s house, when suddenly, a delightful smell of cookies flooded his nose.`,
         ],
@@ -89,9 +89,9 @@ function writeStory(storyID) {
     }
 
     function endPortion() {
-        if (storyPortion.end) {
+        /*if (storyPortion.end) {
             console.log('Switch to end screen');
-        } else {
+        } else {*/
             storylineContainer.classList.toggle('hidden');
             storyforkContainer.classList.toggle('hidden');
 
@@ -104,12 +104,12 @@ function writeStory(storyID) {
                     // storylineContainer.classList.toggle('hidden');
                     // storyforkContainer.classList.toggle('hidden');
 
-                    return storyPortion.optionA.forkId;
+                    writeStory(storyPortion.optionA.forkId);
                 } else if (e.code === 'ArrowRight') {
-                    return storyPortion.optionB.forkId;
+                    writeStory(storyPortion.optionB.forkId);
                 }
             });
-        }
+        //}
     }
 
     initializePortion();
