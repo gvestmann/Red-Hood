@@ -7,6 +7,11 @@
 
     @extend %flex-center;
 
+    @media (orientation: portrait) {
+        height: 100vh;
+        width: 100vw;
+    }
+
     &__box {
         @extend %screen-size;
         //background-color: purple;
@@ -19,6 +24,10 @@
             //opacity: 0.5;
             max-width: 100%;
             transform: scale(1.93) translate(2.5%, 2.5%);
+        }
+
+        @media (orientation: portrait) {
+            display: none;
         }
     }
 
@@ -36,6 +45,11 @@
             }
         }
 
+        @media (orientation: portrait) {
+            height: 100%;
+            width: 100%;
+        }
+
         &:after {
             content: '';
             background-image: url(/img/noise.png);
@@ -44,6 +58,10 @@
             position: fixed;
 
             z-index: 0;
+
+            @media (orientation: portrait) {
+                display: none;
+            }
         }
     }
 }

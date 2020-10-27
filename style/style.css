@@ -46,6 +46,12 @@ body {
 .tv {
   background-color: #030303;
 }
+@media (orientation: portrait) {
+  .tv {
+    height: 100vh;
+    width: 100vw;
+  }
+}
 .tv__box {
   position: absolute;
   z-index: 100;
@@ -53,6 +59,11 @@ body {
 .tv__box img {
   max-width: 100%;
   transform: scale(1.93) translate(2.5%, 2.5%);
+}
+@media (orientation: portrait) {
+  .tv__box {
+    display: none;
+  }
 }
 .tv__screen {
   background-color: #222;
@@ -65,6 +76,12 @@ body {
   display: block;
   animation: fade-in 1000ms ease-in 100ms forwards;
 }
+@media (orientation: portrait) {
+  .tv__screen {
+    height: 100%;
+    width: 100%;
+  }
+}
 .tv__screen:after {
   content: "";
   background-image: url(/img/noise.png);
@@ -72,9 +89,20 @@ body {
   position: fixed;
   z-index: 0;
 }
+@media (orientation: portrait) {
+  .tv__screen:after {
+    display: none;
+  }
+}
 
 .game {
   flex-direction: column;
+}
+@media (orientation: portrait) {
+  .game {
+    height: 100%;
+    width: 100%;
+  }
 }
 .game__img {
   height: 50%;
@@ -82,8 +110,20 @@ body {
   overflow: hidden;
   position: relative;
 }
+@media (orientation: portrait) {
+  .game__img {
+    height: 25%;
+  }
+}
 .game__img img {
+  object-fit: cover;
   max-width: 100%;
+}
+@media (orientation: portrait) {
+  .game__img img {
+    max-width: auto;
+    max-height: 100%;
+  }
 }
 .game__img--actorA {
   position: absolute;
@@ -107,6 +147,11 @@ body {
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
+}
+@media (orientation: portrait) {
+  .game__text {
+    height: 75%;
+  }
 }
 .game__text .storyline {
   width: 100%;
@@ -141,6 +186,12 @@ body {
   align-self: flex-end;
   z-index: 9999;
 }
+@media (orientation: portrait) {
+  .game__text .storyfork .options {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+}
 .game__text .storyfork .options__button {
   padding: 10px 15px 10px 15px;
   background: linear-gradient(180deg, #898989 -17.61%, rgba(31, 18, 40, 0) 189.73%);
@@ -149,6 +200,12 @@ body {
   color: #B9B9B9;
   margin: 0 10px;
   cursor: pointer;
+}
+@media (orientation: portrait) {
+  .game__text .storyfork .options__button {
+    width: 100%;
+    margin: 10px;
+  }
 }
 .game__text .storyfork.hidden {
   display: none;

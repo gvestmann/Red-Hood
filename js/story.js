@@ -251,7 +251,7 @@ let story = [
     {
         id: 12212,
         end: false,
-        background: "/img/scene12211.jpg",
+        background: "/img/scene12212.jpg",
         actorA: "/img/the-huntsman.gif",
         actorB: "/img/lederhosen-friends.gif",
         storyText: [`The Huntsman roamed the forest for a few hours and had a very successful day of hunting. He shot a bear and moose, 2 deers, 2 pheasants, 3 squirrels, 2 wolves (or 1 wolf and 1 dog), 5-8 ducks, a snake, some crows, perhaps a fox (or something very similar), a big, wild boar, 2 elks, a snake, and a wood-pecker. `, `Now, it was time to gome home. On his way he passed Granny’s house, and he could still hear that poor pold woman snore. “She must have terrible sleep apnea,” he thought to himself.`, `He had just gotten home when there was a mysterious knock on the door. Reluctantly he open. Outside stood a couple of his lederhosen friends. They were going to a disco in Berlin, and asked if he would like to join them.`,

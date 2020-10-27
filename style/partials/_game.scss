@@ -5,14 +5,30 @@
     @extend %flex-center;
     flex-direction: column;
 
+    @media (orientation: portrait) {
+        height: 100%;
+        width: 100%;
+    }
+
     &__img {
         height: 50%;
         width: 100%;
         overflow: hidden;
         position: relative;
 
+        @media (orientation: portrait) {
+            height: 25%;
+        }
+        
+
         img {
+            object-fit: cover;
             max-width: 100%;
+
+            @media (orientation: portrait) {
+                max-width: auto;
+                max-height: 100%;
+            }
         }
 
         &--actorA {
@@ -42,6 +58,10 @@
         
         display: flex;
         flex-wrap: wrap;
+
+        @media (orientation: portrait) {
+            height: 75%;
+        }
 
         .storyline {
             width: 100%;
@@ -89,6 +109,11 @@
                 @extend %flex-center;
     
                 z-index: 9999;
+
+                @media (orientation: portrait) {
+                    flex-direction: column;
+                    margin-top: 30px;
+                }
     
                 &__button {
                     padding: 10px 15px 10px 15px;
@@ -98,6 +123,11 @@
                     color: #B9B9B9;
                     margin: 0 10px;
                     cursor: pointer;
+
+                    @media (orientation: portrait) {
+                        width: 100%;
+                        margin: 10px;
+                    }
                 }
             }
 
