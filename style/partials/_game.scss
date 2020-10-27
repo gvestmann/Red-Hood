@@ -9,9 +9,26 @@
         height: 50%;
         width: 100%;
         overflow: hidden;
+        position: relative;
 
         img {
             max-width: 100%;
+        }
+
+        &--actorA {
+            position: absolute;
+            height: 100px;
+            bottom: 2rem;
+            left: 4rem;
+            z-index: 9999;
+        }
+
+        &--actorB {
+            position: absolute;
+            height: 100px;
+            bottom: 2rem;
+            right: 4rem;
+            z-index: 9999;
         }
     }
 

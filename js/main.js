@@ -37,8 +37,8 @@ let story = [
         id: 12,
         end: false,
         background: "img/scene12.jpg",
-        actorA: "img/the-huntsman.gif",
-        actorB: "img/wolf-in-bed.gif",
+        actorA: "img/wolf-in-bed.gif",
+        actorB: "img/the-huntsman.gif",
         storyText: [
             `"Whither so early, Red Hood?"`, `"To Granny. She must have a good meal for once, and strengthen herself therewith."`, `"Where does your Granny live, Red Hood?"`, `"A good quarter of an hour's walk further in the forest, under yon three large oaks," said Red Hood.`, `The Wolf thought within himself, "This nice young damsel is a rich morsel. She will taste better than the old woman; but you must trick her cleverly, that you may catch both."`, `For a time he went by Red Hood's side. Then said he, "Red Hood! Just look! There are such pretty flowers here! Why don't you look round at them all? If you bring with you a sweet smelling nosegay to granny, it will cheer her.”`, `“It is still so early, even if I go picking flowers, I shall come to her in plenty of time," and therewith she skipped into the forest.`, `The Wolf was pleased that his ploy worked and headed down the path to Granny’s house, when suddenly, a delightful smell of cookies flooded his nose.`,
         ],
@@ -111,8 +111,8 @@ function writeStory(storyID) {
 
             window.addEventListener('keydown', e => {
                 if (e.code === 'ArrowLeft') {
-                    // storylineContainer.classList.toggle('hidden');
-                    // storyforkContainer.classList.toggle('hidden');
+                    storylineContainer.classList.toggle('hidden');
+                    storyforkContainer.classList.toggle('hidden');
 
                     writeStory(storyPortion.optionA.forkId);
                 } else if (e.code === 'ArrowRight') {
