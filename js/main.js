@@ -331,8 +331,14 @@ let story = [
     },
 ]
 
-// Variables story containers
-const startContainer = document.querySelector('.start');
+// VARIABLES
+
+// Variables Screen states
+const startContainer = document.querySelector('.tv__screen--start');
+const gameContainer = document.querySelector('.tv__screen--game');
+const endContainer = document.querySelector('.tv__screen--end');
+
+// Variables Game Screen Portions
 const storyContainer = document.querySelector('.game__text');
 const sceneContainer = document.querySelector('.game__img');
 
@@ -342,16 +348,49 @@ let currentStory = 1;
 let storyIndex = 0;
 let storyOngoing = false;
 let storyFork = false;
+let startScreen = true;
+let endScreen = false;
 
-//Listen for click on start page btn
-// start.addEventListener('click', e => {
-//     startContainer.classList.add('hidden');
-//     storyContainer.classList.remove('hidden');
 
-//     startStory(currentStory);
-// });
+//EVENT LISTENERS
 
-startStory(currentStory);
+//Listen for keydown events to control game with keyboard (needs some variables to be true)
+document.addEventListener('keydown', e => {
+    console.log(e.code);
+
+    if (storyOngoing && e.code === 'Space') {
+        storyIndex++;
+        continueStory(currentStory, storyIndex);
+    } 
+    
+    if (storyFork && e.code === 'ArrowLeft') {
+        pickFork(1);
+        storyFork = false;
+    } 
+    
+    if (storyFork && e.code === 'ArrowRight') {
+        pickFork(2);
+        storyFork = false;
+    }
+
+    if (startScreen && e.code === 'Enter') {
+        startContainer.classList.remove('active');
+        gameContainer.classList.add('active');
+
+        startStory(currentStory);
+        startScreen = false;
+    }
+
+    if (endScreen && e.code == 'Enter') {
+        endContainer.classList.remove('active');
+        startContainer.classList.add('active');
+
+        startScreen = true;
+        endScreen = false;
+    }
+});
+
+// STORY FUNCTIONS
 
 //Start story
 function startStory(storyID) {
@@ -362,21 +401,8 @@ function startStory(storyID) {
     storyOngoing = true;
 };
 
-//Listen for keydown events if storyOngoing or StoryFork are true
-document.addEventListener('keydown', e => {
-    if (storyOngoing && e.code === 'Space') {
-        storyIndex++;
-        continueStory(currentStory, storyIndex);
-    } else if (storyFork && e.code === 'ArrowLeft') {
-        pickFork(1);
-        storyFork = false;
-    } else if (storyFork && e.code === 'ArrowRight') {
-        pickFork(2);
-        storyFork = false;
-    }
-});
 
-//Function to continue story while there's still portions left, else check for end state and then build the story fork
+//Continue story while there's still portions left, else check for end state and then build the story fork
 function continueStory(storyID, i) {
     let storyPortion = story.find(story => story.id === storyID);
     let paragraph = storyContainer.querySelector('.paragraph');
@@ -384,7 +410,13 @@ function continueStory(storyID, i) {
     if (i < storyPortion.storyText.length) {
         paragraph.textContent = storyPortion.storyText[i];
     } else if (storyPortion.end) {
-        paragraph.textContent = 'THE END';
+        endContainer.classList.add('active');
+        gameContainer.classList.remove('active');
+
+        endScreen = true;
+        storyOngoing = false;
+        currentStory = 1;
+        storyIndex = 0;
     } else {
         buildFork(storyPortion.choice, storyPortion.option1.text, storyPortion.option2.text);
         storyOngoing = false;
@@ -392,7 +424,7 @@ function continueStory(storyID, i) {
     }
 }
 
-//Function that changes the currentStory variable to the picked fork, and runs the startStory function again. Also resets the storyIndex variable to zero.
+//Changes the currentStory variable to the picked fork, and runs the startStory function again. Also resets the storyIndex variable to zero.
 function pickFork(fork) {
     let storyPortion = story.find(story => story.id === currentStory);
 
@@ -406,6 +438,8 @@ function pickFork(fork) {
         startStory(currentStory);
     }
 }
+
+// BUILDERS
 
 //Build the inner HTML for the story
 function buildStory(text) {
