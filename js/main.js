@@ -390,6 +390,39 @@ document.addEventListener('keydown', e => {
     }
 });
 
+//Button Events
+
+const startBtn = document.getElementById('startBtn');
+const replayBtn = document.getElementById('replayBtn');
+const option1Btn = document.getElementById('button1');
+const option2Btn = document.getElementById('button2');
+
+startBtn.onclick = () => {
+    startContainer.classList.remove('active');
+    gameContainer.classList.add('active');
+
+    startStory(currentStory);
+    startScreen = false;
+}
+
+replayBtn.onclick = () => {
+    endContainer.classList.remove('active');
+    startContainer.classList.add('active');
+
+    startScreen = true;
+    endScreen = false;
+}
+
+option1Btn.onclick = () => {
+    pickFork(1);
+    storyFork = false;
+}
+
+option2Btn.onclick = () => {
+    pickFork(2);
+    storyFork = false;    
+}
+
 // STORY FUNCTIONS
 
 //Start story
