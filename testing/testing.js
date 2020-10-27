@@ -92,6 +92,7 @@ function continueStory(storyID, i) {
     }
 }
 
+//Function that changes the currentStory variable to the picked fork, and runs the startStory function again. Also resets the storyIndex variable to zero.
 function pickFork(fork) {
     let storyPortion = story.find(story => story.id === currentStory);
 
@@ -108,10 +109,12 @@ function pickFork(fork) {
     }
 }
 
+//Build the inner HTML for the story
 function buildStory(text) {
     storyContainer.innerHTML = `<div class="storyline"><div class="paragraph">${text}</div></div>`;
 }
 
+//Build the inner HTML for the story fork
 function buildFork(choice, a, b) {
     storyContainer.innerHTML = `<div class="storyfork"><p class="choice">${choice}</p><div class="options"><button><span class="optionA">${a}</span></button><button><span class="optionB">${b}</span></div></div>`;
 }
