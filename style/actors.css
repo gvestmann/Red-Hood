@@ -17,3 +17,24 @@
 .game__img {
     position: relative;
 }
+
+
+.tv__screen--start {
+    display: block;
+    position: fixed;
+    background: #222323;
+    z-index: 2;
+    text-align: center;
+    width: 65vh;
+    height: 52vh;
+}
+
+.start-button {
+    padding: 10px 15px 10px 15px;
+    background: linear-gradient(180deg, #898989 -17.61%, rgba(31, 18, 40, 0) 189.73%);
+    font-size: 20px;
+    color: #B9B9B9 !important;
+    margin: 0 10px;
+    cursor: pointer;
+    font-family: 'Syne Mono', monospace !important;
+}
