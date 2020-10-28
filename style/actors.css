@@ -17,3 +17,51 @@
 .game__img {
     position: relative;
 } */
+
+.tv__screen--start {
+    display: block;
+    position: fixed;
+    background: #222323;
+    z-index: 2;
+    text-align: center;
+    width: 65vh;
+    height: 52vh;
+    padding-top: 2rem;
+}
+
+.tv__screen--start h2 {
+    font-size: 40px !important;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 580px) {
+    .tv__screen--start {
+      background: none;
+    }
+  }
+
+.tv__screen--start p {
+    margin-top: 0.2rem;
+}
+
+#startBtn {
+    animation: blink 1s linear infinite;
+    border: none;
+    background: none;
+    color: #b9b9b9;
+    font-size: 20px;
+    font-family: 'Syne Mono', monospace !important;
+    padding-top: 1rem;
+}
+
+@keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .controls-border {
+      border: 1px solid #b9b9b9;
+      border-radius: 3px;
+  }
