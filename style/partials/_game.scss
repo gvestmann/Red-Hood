@@ -37,6 +37,7 @@
             bottom: 2rem;
             left: 4rem;
             z-index: 9999;
+            filter: grayscale(100%);
         }
 
         &--actorB {
@@ -45,6 +46,7 @@
             bottom: 2rem;
             right: 4rem;
             z-index: 9999;
+            filter: grayscale(100%);
         }
     }
 
@@ -80,6 +82,7 @@
                 align-self: flex-end;
 
                 cursor: pointer;
+                animation: blink 2s linear infinite;
             }
 
             &.hidden {

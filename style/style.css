@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
-.game, .tv, .tv__box, .tv__screen:after {
+.game, .tv, .tv__box, .tv__screen, .tv__screen:after {
   height: 52vh;
   width: 65vh;
 }
@@ -43,6 +43,14 @@ body {
     opacity: 1;
   }
 }
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 .tv {
   background-color: #030303;
 }
@@ -75,6 +83,31 @@ body {
 .tv__screen--start.active, .tv__screen--game.active, .tv__screen--end.active {
   display: block;
   animation: fade-in 1000ms ease-in 100ms forwards;
+}
+.tv__screen--start, .tv__screen--end {
+  text-align: center;
+}
+.tv__screen--start button, .tv__screen--end button {
+  animation: blink 2s linear infinite;
+  border: none;
+  background: none;
+  color: #b9b9b9;
+  font-family: "Syne Mono", monospace;
+  font-size: 1.2rem;
+  padding-top: 1rem;
+}
+.tv__screen--start .controls-border, .tv__screen--end .controls-border {
+  border: 1px solid #b9b9b9;
+  border-radius: 3px;
+  padding: 2px 10px;
+}
+.tv__screen--start h2, .tv__screen--end h2 {
+  font-size: 2.3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.tv__screen--start p, .tv__screen--end p {
+  margin-top: 0.2rem;
 }
 @media (orientation: portrait) {
   .tv__screen {
@@ -131,6 +164,7 @@ body {
   bottom: 2rem;
   left: 4rem;
   z-index: 9999;
+  filter: grayscale(100%);
 }
 .game__img--actorB {
   position: absolute;
@@ -138,6 +172,7 @@ body {
   bottom: 2rem;
   right: 4rem;
   z-index: 9999;
+  filter: grayscale(100%);
 }
 .game__text {
   height: 50%;
@@ -166,6 +201,7 @@ body {
   text-align: end;
   align-self: flex-end;
   cursor: pointer;
+  animation: blink 2s linear infinite;
 }
 .game__text .storyline.hidden {
   display: none;

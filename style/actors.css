@@ -86,10 +86,10 @@
      font-family: 'Syne Mono', monospace !important;
  }
 
- .game__img--actorA {
+ /* .game__img--actorA {
     filter: grayscale(100%);
   }
   
   .game__img--actorB {
     filter: grayscale(100%);
-  }
+  } */
